@@ -4,6 +4,7 @@ import {formatCurrency} from '../utils/money.js';
 import {hello} from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import {deliveryOptions , getDeliveryOption} from '../../data/deliveryOptions.js'
+import { renderPaymentSummary } from './paymentSummary.js';
 
 hello();
 const today = dayjs();
@@ -133,6 +134,8 @@ document.querySelectorAll('.js-delete-link')
         `.js-cart-item-container-${productId}`
       );
       container.remove();
+
+      renderPaymentSummary();
     });
   });
 
@@ -152,6 +155,7 @@ document.querySelectorAll('.js-delivery-option')
     const {productId , deliveryOptionId} = element.dataset;
     updateDeliveryOption(productId , deliveryOptionId);
     renderOrderSummary();
+    renderPaymentSummary();
   });
 });
 }
