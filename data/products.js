@@ -52,6 +52,20 @@ extraInfoHTML(){
   `;
 }
 }
+/* 
+function logThis(){
+  console.log(this);
+}
+logThis.call('hello');
+
+this
+const obj3 = {
+  method : () => {
+    console.log(this);
+  }
+}
+obj3.method();
+ */
 
 export const products = [
 {
