@@ -82,6 +82,8 @@ if(productDetails.type === 'clothing'){
 });
 console.log('Load Products');
 
+}).catch(() => {
+  console.log('error hai bhai...');
 });
   return promise;
 }
@@ -107,11 +109,14 @@ console.log('Load Products');
 fun();
  });
 
+ xhr.addEventListener('error' , () => {
+  console.log('unexpected error.Please try again later.');
+ })
+
  xhr.open('GET' , 'https://supersimplebackend.dev/products');
 
  xhr.send();
 }
-loadProducts(); 
 
 /* export const products = [
 {
