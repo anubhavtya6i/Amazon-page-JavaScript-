@@ -14,7 +14,7 @@ try{
     loadCart(() => {
 
     // Throw and Reject both can be used to create errors in the future
-        // throw 'error0';
+        // throw 'error0';1
        // reject('error1');
        resolve();
     });
